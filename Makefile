@@ -5,7 +5,7 @@ PREFIX ?= /usr/local
 export CLIP_FILE ?= ./.test_clip
 
 install:
-	install $(BIN) $(PREFIX)/bin
+	cp $(BIN).sh $(PREFIX)/bin/$(BIN)
 
 uninstall:
 	rm -f $(PREFIX)/bin/$(BIN)

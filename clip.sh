@@ -4,7 +4,7 @@ READ=0
 LAST_BYTE=""
 
 if [ -z "$CLIP_FILE" ]; then
-  CLIP_FILE="~/.clip"
+  CLIP_FILE="$HOME/.clip"
 fi
 
 if [ -t 0 ]; then
@@ -73,13 +73,16 @@ clip_write () {
   done >> "$CLIP_FILE"
 }
 
-clip () {
+_clip () {
   if [ "1" == "$READ" ]; then
     clip_read
+    return 0
   else
     clip_destroy
     clip_write
+    return 0
   fi
 }
 
-clip && exit $?;
+_clip
+exit $?
