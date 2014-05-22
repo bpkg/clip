@@ -1,0 +1,7 @@
+{
+  "name": "clip",
+  "version": "0.0.1",
+  "description": "Silly terminal clipboard",
+  "scripts": [ "clip.sh" ],
+  "install": "make install"
+}
